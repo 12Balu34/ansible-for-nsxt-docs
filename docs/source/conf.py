@@ -21,6 +21,7 @@ import sphinx_rtd_theme
 project = 'ansible-for-nsxt-docs'
 copyright = '2020, 12Balu34'
 author = '12Balu34'
+master_doc = 'index'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
@@ -48,13 +49,6 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
-
 extensions = [
     "sphinx_rtd_theme"
 ]
