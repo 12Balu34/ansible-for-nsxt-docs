@@ -19,7 +19,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'ansible-for-nsxt-docs'
-copyright = '2020, 12Balu34'
+# copyright = '2020, 12Balu34'
 author = '12Balu34'
 master_doc = 'index'
 
