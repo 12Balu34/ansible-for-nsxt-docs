@@ -1,4 +1,4 @@
-:source: network/nsxt/nsxt_compute_collection_fabric_templates.py
+:source: nsxt/nsxt_compute_collection_fabric_templates.py
 
 :orphan:
 
@@ -144,9 +144,7 @@ Parameters
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>State can be either &#x27;present&#x27; or &#x27;absent&#x27;.</div>
-                                            <div>&#x27;present&#x27; is used to create or update resource.</div>
-                                            <div>&#x27;absent&#x27; is used to delete resource.</div>
+                                            <div>State can be either &#x27;present&#x27; or &#x27;absent&#x27;. &#x27;present&#x27; is used to create or update resource. &#x27;absent&#x27; is used to delete resource.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -213,5 +211,3 @@ Authors
 - Rahul Raghuvanshi
 
 
-.. hint::
-    If you notice any issues in this documentation, you can `edit this document <https://github.com/ansible/ansible/edit/devel/lib/ansible/modules/network/nsxt/nsxt_compute_collection_fabric_templates.py?description=%23%23%23%23%23%20SUMMARY%0A%3C!---%20Your%20description%20here%20--%3E%0A%0A%0A%23%23%23%23%23%20ISSUE%20TYPE%0A-%20Docs%20Pull%20Request%0A%0A%2Blabel:%20docsite_pr>`_ to improve it.
