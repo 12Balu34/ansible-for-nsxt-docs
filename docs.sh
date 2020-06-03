@@ -22,9 +22,6 @@ mkdir -p ./lib/ansible/modules/nsxt
 echo 'Copying ansible-for-nsxt modules'
 cp ../ansible-for-nsxt/library/* ./lib/ansible/modules/nsxt
 
-echo 'Removing broken module nsxt_policy_tier0'
-rm ./lib/ansible/modules/nsxt/nsxt_policy_tier0.py # TODO
-
 
 echo 'Building .rst files'
 cd ./docs/docsite
