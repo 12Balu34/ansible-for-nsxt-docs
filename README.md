@@ -1,6 +1,8 @@
 # The missing rendered docs for ansible-for-nsxt
 The goal of this repo is to provide a temporary home for the rendered documentation for VMware's [ansible-for-nsxt](https://github.com/vmware/ansible-for-nsxt) Repository.  
-I hope these docs find their way to the offical repo in the future.
+I hope these docs find their way to the offical repo in the future.  
+
+The docs are hosted [here](https://ansible-for-nsxt-docs.readthedocs.io/en/latest/)
 
 ## How it works: Overview
 * Convert the module documentation to .rst file (using the mechanisms described [Here](https://docs.ansible.com/ansible/latest/dev_guide/testing_documentation.html#testing-module-documentation))
