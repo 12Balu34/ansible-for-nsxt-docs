@@ -32,11 +32,11 @@ make clean
 make modules
 
 echo 'Copying .rst files to output folder'
-mkdir -p ../../../output
-cp ./rst/modules/nsxt_* ../../../output
+mkdir -p /rst/output
+cp ./rst/modules/nsxt_* /rst/output
 
 echo 'Cleaning up repos'
-cd ../../../
+cd /rst
 rm -rf ansible
 rm -rf ansible-for-nsxt
 
