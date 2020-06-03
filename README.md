@@ -19,7 +19,7 @@ Details on what's happening can be found in the `docs.sh` script
 As a semi-automated way to generate the .rst files needed to render the docs, simply run the following commands (requires Docker):  
 
 ```sh
-mdkir -p ~/rst
+mkdir -p ~/rst
 docker run --rm -ti -v ~/rst:/rst 12balu34/ansible-for-nsxt-docs
 ```
 The .rst files will be located in ~/rst after the Container-run finishes
