@@ -14,3 +14,16 @@ Details on what's happening can be found in the `docs.sh` script
 > :warning:
 > The current docs were generated with the following modules of following commit: https://github.com/12Balu34/ansible-for-nsxt/commit/970d15a71a7396da3809f4af0e9f35a10753db7f
 > The docs will not be kept up to date!
+
+## Generate the .rst files locally
+As a semi-automated way to generate the .rst files needed to render the docs, simply run the following commands (requires Docker):  
+
+```sh
+mdkir -p ~/rst
+docker run --rm -ti -v ~/rst:/rst 12balu34/ansible-for-nsxt-docs
+```
+The .rst files will be located in ~/rst after the Container-run finishes
+
+
+
+* Build the container
