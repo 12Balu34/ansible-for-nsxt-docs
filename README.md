@@ -11,6 +11,6 @@ The docs are hosted [here](https://ansible-for-nsxt-docs.readthedocs.io/en/lates
 
 Details on what's happening can be found in the `docs.sh` script
 
-> :warning: Currently, the module `nsxt_policy_tier0` is still missing.
-> The docs were generated from this commit: https://github.com/12Balu34/ansible-for-nsxt/commit/68c6b2341e46bda8ef8a02ca4875075f80d5ad74
+> :warning:
+> The docs were generated the latest commit in this repo
 > The docs will not be kept up to date!
