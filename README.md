@@ -12,5 +12,5 @@ The docs are hosted [here](https://ansible-for-nsxt-docs.readthedocs.io/en/lates
 Details on what's happening can be found in the `docs.sh` script
 
 > :warning:
-> The docs were generated the latest commit in this repo
+> The current docs were generated with the following modules of following commit: https://github.com/12Balu34/ansible-for-nsxt/commit/970d15a71a7396da3809f4af0e9f35a10753db7f
 > The docs will not be kept up to date!
