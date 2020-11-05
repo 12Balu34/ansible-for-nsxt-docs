@@ -20,7 +20,12 @@ As a semi-automated way to generate the .rst files needed to render the docs, si
 
 ```sh
 mkdir -p ~/rst
-docker run --rm -ti -v ~/rst:/rst 12balu34/ansible-for-nsxt-docs
+docker run --rm -ti \
+    -v ~/rst:/rst \
+    -e ANSIBLE_FOR_NSXT_REPO=https://github.com/uempfel/ansible-for-nsxt \
+    -e ANSIBLE_FOR_NSXT_BRANCH=fix-docs-syntax \
+    -e ANSIBLE_BRANCH='v2.9.9' \
+    12balu34/ansible-for-nsxt-docs
 ```
 The .rst files will be located in ~/rst after the Container-run finishes
 

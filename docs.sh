@@ -1,14 +1,11 @@
 #!/bin/bash
-ANSIBLE_BRANCH='v2.9.9'
-ANSIBLE_FOR_NSXT_REPO=https://github.com/12Balu34/ansible-for-nsxt
-ANSIBLE_FOR_NSXT_BRANCH='dev'
 
 echo 'Changing to rst directory'
 cd /rst
 
 echo 'Clonig Repositories and checking out required branches'
 git clone https://github.com/ansible/ansible
-git clone https://github.com/12Balu34/ansible-for-nsxt
+git clone $ANSIBLE_FOR_NSXT_REPO
 cd ansible-for-nsxt
 git checkout $ANSIBLE_FOR_NSXT_BRANCH
 cd ../ansible
