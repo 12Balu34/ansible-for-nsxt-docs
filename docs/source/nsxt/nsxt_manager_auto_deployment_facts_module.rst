@@ -17,7 +17,7 @@ nsxt_manager_auto_deployment_facts -- Returns info for all cluster node VM auto-
 
 Synopsis
 --------
-- Returns request information for every attempted deployment of a cluster node VM.
+- Returns request information for every attempted deployment of a cluster node VM
 
 
 

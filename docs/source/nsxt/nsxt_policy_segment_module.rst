@@ -17,9 +17,7 @@ nsxt_policy_segment -- Create or Delete a Policy Segment
 
 Synopsis
 --------
-- Creates or deletes a Policy Segment.
-- Required attributes include id and display_name.
-- If the specified TransportZone is of VLAN type, a vlan_id is also required.
+- Creates or deletes a Policy Segment. Required attributes include id and display_name. If the specified TransportZone is of VLAN type, a vlan_id is also required.
 
 
 
@@ -917,8 +915,8 @@ Parameters
                     <b>address_bindings</b>
                     <a class="ansibleOptionLink" href="#parameter-segment_ports/address_bindings" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=dictionary</span>                                            </div>
                                     </td>
                                 <td>
                                                                                                                                                             </td>

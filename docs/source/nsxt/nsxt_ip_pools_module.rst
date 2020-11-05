@@ -17,9 +17,7 @@ nsxt_ip_pools -- Create an IP Pool
 
 Synopsis
 --------
-- Creates a new IPv4 or IPv6 address pool.
-- Required parameters are allocation_ranges and cidr.
-- Optional parameters are display_name, description, dns_nameservers, dns_suffix, and gateway_ip.
+- Creates a new IPv4 or IPv6 address pool. Required parameters are allocation_ranges and cidr. Optional parameters are display_name, description, dns_nameservers, dns_suffix, and gateway_ip.
 
 
 

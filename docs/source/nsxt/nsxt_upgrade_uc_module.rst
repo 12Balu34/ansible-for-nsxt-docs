@@ -17,7 +17,7 @@ nsxt_upgrade_uc -- Upgrade the upgrade coordinator
 
 Synopsis
 --------
-- Upgrade the upgrade coordinator.
+- Upgrade the upgrade coordinator
 
 
 

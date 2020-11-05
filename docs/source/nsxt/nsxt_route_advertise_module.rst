@@ -1,12 +1,12 @@
-:source: nsxt/nsxt_compute_collection_fabric_templates.py
+:source: nsxt/nsxt_route_advertise.py
 
 :orphan:
 
-.. _nsxt_compute_collection_fabric_templates_module:
+.. _nsxt_route_advertise_module:
 
 
-nsxt_compute_collection_fabric_templates -- Create a compute collection fabric template
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+nsxt_route_advertise -- Toggle tier 1 route advertisement
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.7
 
@@ -17,8 +17,7 @@ nsxt_compute_collection_fabric_templates -- Create a compute collection fabric t
 
 Synopsis
 --------
-- Fabric templates are fabric configurations applied at the compute collection level.
-- This configurations is used to decide what automated operations should be a run when a host membership changes.
+- Toggle route advertisement on Tier 1 routers
 
 
 
@@ -36,51 +35,92 @@ Parameters
         </tr>
                     <tr>
                                                                 <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-auto_install_nsx"></div>
-                    <b>auto_install_nsx</b>
-                    <a class="ansibleOptionLink" href="#parameter-auto_install_nsx" title="Permalink to this option"></a>
+                    <div class="ansibleOptionAnchor" id="parameter-advertise_dns_forwarder"></div>
+                    <b>advertise_dns_forwarder</b>
+                    <a class="ansibleOptionLink" href="#parameter-advertise_dns_forwarder" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">boolean</span>
                                                                     </div>
                                     </td>
                                 <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
+                                                                                                                                                            </td>
                                                                 <td>
-                                            <div>Indicates whether NSX components should be automcatically installed. When &#x27;true&#x27; NSX components will be automatically installed on the new host added to compute collection.</div>
+                                            <div>Flag to advertise all routes of dns forwarder listener ips and source ips</div>
                                                         </td>
             </tr>
                                 <tr>
                                                                 <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-cluster_name"></div>
-                    <b>cluster_name</b>
-                    <a class="ansibleOptionLink" href="#parameter-cluster_name" title="Permalink to this option"></a>
+                    <div class="ansibleOptionAnchor" id="parameter-advertise_lb_snat_ip"></div>
+                    <b>advertise_lb_snat_ip</b>
+                    <a class="ansibleOptionLink" href="#parameter-advertise_lb_snat_ip" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">string</span>
+                        <span style="color: purple">boolean</span>
                                                                     </div>
                                     </td>
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Cluster Name</div>
+                                            <div>Flag to advertise all lb SNAT ips</div>
                                                         </td>
             </tr>
                                 <tr>
                                                                 <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-compute_manager_name"></div>
-                    <b>compute_manager_name</b>
-                    <a class="ansibleOptionLink" href="#parameter-compute_manager_name" title="Permalink to this option"></a>
+                    <div class="ansibleOptionAnchor" id="parameter-advertise_lb_vip"></div>
+                    <b>advertise_lb_vip</b>
+                    <a class="ansibleOptionLink" href="#parameter-advertise_lb_vip" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">string</span>
+                        <span style="color: purple">boolean</span>
                                                                     </div>
                                     </td>
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Cluster Manager&#x27;s Name</div>
+                                            <div>Flag to advertise lb vips</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-advertise_nat_routes"></div>
+                    <b>advertise_nat_routes</b>
+                    <a class="ansibleOptionLink" href="#parameter-advertise_nat_routes" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Flag to advertise all routes of nat</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-advertise_nsx_connected_routes"></div>
+                    <b>advertise_nsx_connected_routes</b>
+                    <a class="ansibleOptionLink" href="#parameter-advertise_nsx_connected_routes" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Flag to advertise all connected routes</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-advertise_static_routes"></div>
+                    <b>advertise_static_routes</b>
+                    <a class="ansibleOptionLink" href="#parameter-advertise_static_routes" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Flag to advertise all static routes</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -95,7 +135,22 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Display name</div>
+                                            <div>Display name of Tier 1 router</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-enabled"></div>
+                    <b>enabled</b>
+                    <a class="ansibleOptionLink" href="#parameter-enabled" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Flag to enable this configuration</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -130,25 +185,6 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-state"></div>
-                    <b>state</b>
-                    <a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">-</span>
-                                                 / <span style="color: red">required</span>                    </div>
-                                    </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>present</li>
-                                                                                                                                                                                                <li>absent</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>State can be either &#x27;present&#x27; or &#x27;absent&#x27;. &#x27;present&#x27; is used to create or update resource. &#x27;absent&#x27; is used to delete resource.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-username"></div>
                     <b>username</b>
                     <a class="ansibleOptionLink" href="#parameter-username" title="Permalink to this option"></a>
@@ -174,17 +210,19 @@ Examples
 .. code-block:: yaml+jinja
 
     
-      - name: Create compute collection fabric template
-          nsxt_compute_collection_fabric_templates:
-            hostname: "{{hostname}}"
-            username: "{{username}}"
-            password: "{{password}}"
-            validate_certs: False
-            display_name: CC_fabric_template
-            cluster_name: "cl1"
-            compute_manager_name: VC1
-            auto_install_nsx: True
-            state: present
+    - name: Toggle tier 1 route advertisement
+      nsxt_route_advertise:
+        hostname: "10.192.167.137"
+        username: "admin"
+        password: "Admin!23Admin"
+        validate_certs: False
+        enabled: True
+        advertise_static_routes: True
+        advertise_dns_forwarder: True
+        advertise_lb_snat_ip: True
+        advertise_lb_vip: True
+        advertise_nat_routes: True
+        advertise_nsx_connected_routes: True
 
 
 
@@ -208,6 +246,6 @@ Status
 Authors
 ~~~~~~~
 
-- Rahul Raghuvanshi
+- Matt Proud
 
 

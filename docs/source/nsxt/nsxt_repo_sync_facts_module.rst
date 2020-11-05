@@ -17,7 +17,7 @@ nsxt_repo_sync_facts -- Get synchronize status of a manager node
 
 Synopsis
 --------
-- Returns the synchronization status for the manager represented by given.
+- Returns the synchronization status for the manager represented by given .
 
 
 

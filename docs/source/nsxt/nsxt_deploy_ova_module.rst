@@ -17,7 +17,7 @@ nsxt_deploy_ova -- Deploys NSXT Manager
 
 Synopsis
 --------
-- Deploys NSXT Manager.
+- Deploys NSXT Manager
 
 
 

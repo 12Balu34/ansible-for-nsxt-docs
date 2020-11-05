@@ -17,9 +17,7 @@ nsxt_upgrade_postchecks -- Execute post-upgrade checks
 
 Synopsis
 --------
-- Run pre-defined checks to identify potential issues which can be encountered after an upgrade.
-- The results of the checks are added to the respective upgrade units aggregate-info.
-- The progress and status of operation is part of upgrade status summary of individual components.
+- Run pre-defined checks to identify potential issues which can be encountered after an upgrade. The results of the checks are added to the respective upgrade units aggregate-info. The progress and status of operation is part of upgrade status summary of individual components.
 
 
 

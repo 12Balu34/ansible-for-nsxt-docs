@@ -17,9 +17,7 @@ nsxt_transport_zones -- Create a Transport Zone
 
 Synopsis
 --------
-- Creates a new transport zone.
-- The required parameters are host_switch_name and transport_type (OVERLAY or VLAN).
-- The optional parameters are description and display_name.
+- Creates a new transport zone. The required parameters are host_switch_name and transport_type (OVERLAY or VLAN). The optional parameters are description and display_name.
 
 
 

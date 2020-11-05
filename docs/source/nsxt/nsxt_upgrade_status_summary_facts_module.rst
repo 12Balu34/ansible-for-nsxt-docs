@@ -17,7 +17,7 @@ nsxt_upgrade_status_summary_facts -- Get the upgrade groups information
 
 Synopsis
 --------
-- Get the upgrade groups information.
+- Get the upgrade groups information
 
 
 

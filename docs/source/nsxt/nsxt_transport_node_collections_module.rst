@@ -5,8 +5,8 @@
 .. _nsxt_transport_node_collections_module:
 
 
-nsxt_transport_node_collections -- Create transport node collection by attaching Transport Node Profile to cluster
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+nsxt_transport_node_collections -- Create transport node collection by attaching Transport Node Profile to cluster. description: When transport node collection is created the hosts which are part of compute collection will be prepared automatically i.e. NSX Manager attempts to install the NSX components on hosts. Transport nodes for these hosts are created using the configuration specified in transport node profile
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.7
 
@@ -17,9 +17,6 @@ nsxt_transport_node_collections -- Create transport node collection by attaching
 
 Synopsis
 --------
-- When transport node collection is created the hosts which are part of compute collection will be prepared automatically i.e. NSX Manager attempts to install the NSX components on hosts.
-- Transport nodes for these hosts are created using the configuration specified in transport node profile.
-
 
 
 

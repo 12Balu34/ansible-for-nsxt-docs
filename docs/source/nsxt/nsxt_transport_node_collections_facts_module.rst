@@ -17,7 +17,7 @@ nsxt_transport_node_collections_facts -- List Transport Node collections
 
 Synopsis
 --------
-- Returns all Transport Node collections.
+- Returns all Transport Node collections
 
 
 

@@ -5,8 +5,8 @@
 .. _nsxt_transport_node_profiles_module:
 
 
-nsxt_transport_node_profiles -- Create a Transport Node Profile
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+nsxt_transport_node_profiles -- Create a Transport Node Profile description: Transport node profile captures the configuration needed to create a transport node. A transport node profile can be attached to compute collections for automatic TN creation of member hosts
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.7
 
@@ -17,9 +17,6 @@ nsxt_transport_node_profiles -- Create a Transport Node Profile
 
 Synopsis
 --------
-- Transport node profile captures the configuration needed to create a transport node.
-- A transport node profile can be attached to compute collections for automatic TN creation of member hosts.
-
 
 
 
@@ -186,7 +183,7 @@ Examples
 
     
     - name: Create transport node profile
-      nsxt_transport_node_profile:
+      nsxt_transport_node_profiles:
         hostname: "10.192.167.137"
         username: "admin"
         password: "Admin!23Admin"
@@ -210,6 +207,9 @@ Examples
               ip_pool_name: "IPPool-IPV4-1"
             transport_zone_endpoints:
             - transport_zone_name: "TZ1"
+            vmk_install_migration:
+            - device_name: vmk0
+              destination_network_name: "ls_vmk_Mgmt"
         state: "present"
 
 

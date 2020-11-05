@@ -1,12 +1,12 @@
-:source: nsxt/nsxt_compute_collection_transport_templates.py
+:source: nsxt/nsxt_cluster_profiles.py
 
 :orphan:
 
-.. _nsxt_compute_collection_transport_templates_module:
+.. _nsxt_cluster_profiles_module:
 
 
-nsxt_compute_collection_transport_templates -- Create transport node template for compute collection
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+nsxt_cluster_profiles -- Create a Cluster Profile
++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.7
 
@@ -17,7 +17,7 @@ nsxt_compute_collection_transport_templates -- Create transport node template fo
 
 Synopsis
 --------
-- If automated transport node creation is configured on compute collection, this template will serve as the default setting for transport node creation.
+- Create a cluster profile. The resource_type is required.
 
 
 
@@ -35,17 +35,17 @@ Parameters
         </tr>
                     <tr>
                                                                 <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-compute_collections"></div>
-                    <b>compute_collections</b>
-                    <a class="ansibleOptionLink" href="#parameter-compute_collections" title="Permalink to this option"></a>
+                    <div class="ansibleOptionAnchor" id="parameter-description"></div>
+                    <b>description</b>
+                    <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">list</span>
+                        <span style="color: purple">string</span>
                                                                     </div>
                                     </td>
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Associated compute collections</div>
+                                            <div>Description of the resource</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -55,27 +55,12 @@ Parameters
                     <a class="ansibleOptionLink" href="#parameter-display_name" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">string</span>
-                                                                    </div>
+                                                 / <span style="color: red">required</span>                    </div>
                                     </td>
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Display name</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-host_switch_spec"></div>
-                    <b>host_switch_spec</b>
-                    <a class="ansibleOptionLink" href="#parameter-host_switch_spec" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                    </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Property &#x27;host_switch_spec&#x27; can be used to create either standard host switch or preconfigured host switch.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -91,21 +76,6 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Deployed NSX manager hostname.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-network_migration_spec_ids"></div>
-                    <b>network_migration_spec_ids</b>
-                    <a class="ansibleOptionLink" href="#parameter-network_migration_spec_ids" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">array of NetworkMigrationSpecTypeIdEntry</span>
-                                                                    </div>
-                                    </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Property &#x27;network_migration_spec_ids&#x27; should only be used for compute collections which are clusters in VMware vCenter. Currently only HostProfileNetworkMigrationSpec type is supported. This specification will only apply to Stateless ESX hosts which are under this vCenter cluster.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -144,21 +114,6 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-transport_zone_endpoints"></div>
-                    <b>transport_zone_endpoints</b>
-                    <a class="ansibleOptionLink" href="#parameter-transport_zone_endpoints" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">array of TransportZoneEndPoint</span>
-                                                                    </div>
-                                    </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Transport zone endpoints</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-username"></div>
                     <b>username</b>
                     <a class="ansibleOptionLink" href="#parameter-username" title="Permalink to this option"></a>
@@ -184,31 +139,17 @@ Examples
 .. code-block:: yaml+jinja
 
     
-      - name: Create compute collection transport template
-        nsxt_compute_collection_transport_templates:
-          hostname: "{{hostname}}"
-          username: "{{username}}"
-          password: "{{password}}"
-          validate_certs: False
-          display_name: CCTT2
-          compute_collections:
-          - compute_manager_name: VC2
-            cluster_name: "ControlCluster1-$$"
-          host_switch_spec:
-              resource_type: StandardHostSwitchSpec
-              host_switches:
-              - host_switch_profiles:
-                - name: uplinkProfile1
-                  type: UplinkHostSwitchProfile
-                host_switch_name: hostswitch1
-                pnics:
-                - device_name: vmnic1
-                  uplink_name: "uplink-1"
-                ip_assignment_spec:
-                  resource_type: StaticIpPoolSpec
-                  ip_pool_name: "IPPool-IPV4-1"
-          transport_zone_endpoints:
-          - transport_zone_name: "TZ1"
+      - name: Create Cluster Profiles
+        nsxt_cluster_profiles:
+          hostname: "10.192.167.137"
+          username: "admin"
+          password: "Admin!23Admin"
+          validate_certs: False `
+          resource_type: EdgeHighAvailabilityProfile
+          display_name: edge-cluster-profile-East
+          bfd_probe_interval: 1000
+          bfd_declare_dead_multiple: 3
+          bfd_allowed_hops: 1
           state: present
 
 
@@ -233,6 +174,6 @@ Status
 Authors
 ~~~~~~~
 
-- Rahul Raghuvanshi
+- Kommireddy Akhilesh
 
 

@@ -17,9 +17,7 @@ nsxt_virtual_ip -- Sets and clears cluster virtual IP address
 
 Synopsis
 --------
-- Sets the cluster virtual IP address.
-- Note, all nodes in the management cluster must be in the same subnet.
-- If not, a 409 CONFLICT status is returned.
+- Sets the cluster virtual IP address. Note, all nodes in the management cluster must be in the same subnet. If not, a 409 CONFLICT status is returned. 
 
 
 

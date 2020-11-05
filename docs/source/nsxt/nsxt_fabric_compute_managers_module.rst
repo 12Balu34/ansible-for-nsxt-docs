@@ -17,8 +17,7 @@ nsxt_fabric_compute_managers -- Register compute manager with NSX
 
 Synopsis
 --------
-- Registers compute manager with NSX.
-- Inventory service will collect data from the registered compute manager.
+- Registers compute manager with NSX. Inventory service will collect data from the registered compute manager
 
 
 
@@ -137,6 +136,25 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>IP address or hostname of compute manager</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-set_as_oidc_provider"></div>
+                    <b>set_as_oidc_provider</b>
+                    <a class="ansibleOptionLink" href="#parameter-set_as_oidc_provider" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Specifies whether compute manager has been set as OIDC provider If the compute manager is VC and need to set set as OIDC provider for NSX then this flag should be set as true. This is specific to TKGS. NSX-T 3.0 only</div>
                                                         </td>
             </tr>
                                 <tr>

@@ -17,9 +17,7 @@ nsxt_policy_tier1 -- Create/Update/Delete a Tier-1 and associated resources
 
 Synopsis
 --------
-- Creates/Updates/Deletes a Tier-1 resource using the Policy API.
-- Assocaited resources include 'Tier-1 Locale Service' and 'Tier-1 Interface'.
-- 'Tier-1 Locale Service' and 'Tier-1 Interface' attributes must be prepended with 't1ls' and 't1iface' respectively.
+- Creates/Updates/Deletes a Tier-1 resource using the Policy API. Assocaited resources include 'Tier-1 Locale Service' and 'Tier-1 Interface'. 'Tier-1 Locale Service' and 'Tier-1 Interface' attributes must be prepended with 't1ls' and 't1iface' respectively.
 
 
 
@@ -1356,6 +1354,46 @@ Parameters
                     
                                     
                                                 <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-locale_services/route_redistribution_types"></div>
+                    <b>route_redistribution_types</b>
+                    <a class="ansibleOptionLink" href="#parameter-locale_services/route_redistribution_types" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">list</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>TIER0_STATIC - Redistribute user added static routes.</li>
+                                                                                                                                                                                                <li>TIER0_CONNECTED - Redistribute all subnets configured on Interfaces and routes related to TIER0_ROUTER_LINK, TIER0_SEGMENT, TIER0_DNS_FORWARDER_IP, TIER0_IPSEC_LOCAL_IP, TIER0_NAT types.</li>
+                                                                                                                                                                                                <li>TIER1_STATIC - Redistribute all subnets and static routes advertised by Tier-1s.</li>
+                                                                                                                                                                                                <li>TIER0_EXTERNAL_INTERFACE - Redistribute external interface subnets on Tier-0.</li>
+                                                                                                                                                                                                <li>TIER0_LOOPBACK_INTERFACE - Redistribute loopback interface subnets on Tier-0.</li>
+                                                                                                                                                                                                <li>TIER0_SEGMENT - Redistribute subnets configured on Segments connected to Tier-0.</li>
+                                                                                                                                                                                                <li>TIER0_ROUTER_LINK - Redistribute router link port subnets on Tier-0.</li>
+                                                                                                                                                                                                <li>TIER0_SERVICE_INTERFACE - Redistribute Tier0 service interface subnets.</li>
+                                                                                                                                                                                                <li>TIER0_DNS_FORWARDER_IP - Redistribute DNS forwarder subnets.</li>
+                                                                                                                                                                                                <li>TIER0_IPSEC_LOCAL_IP - Redistribute IPSec subnets.</li>
+                                                                                                                                                                                                <li>TIER0_NAT - Redistribute NAT IPs owned by Tier-0.</li>
+                                                                                                                                                                                                <li>TIER0_EVPN_TEP_IP - Redistribute EVPN local endpoint subnets on Tier-0.</li>
+                                                                                                                                                                                                <li>TIER1_NAT - Redistribute NAT IPs advertised by Tier-1 instances.</li>
+                                                                                                                                                                                                <li>TIER1_LB_VIP - Redistribute LB VIP IPs advertised by Tier-1 instances.</li>
+                                                                                                                                                                                                <li>TIER1_LB_SNAT - Redistribute LB SNAT IPs advertised by Tier-1 instances.</li>
+                                                                                                                                                                                                <li>TIER1_DNS_FORWARDER_IP - Redistribute DNS forwarder subnets on Tier-1 instances.</li>
+                                                                                                                                                                                                <li>TIER1_CONNECTED - Redistribute all subnets configured on Segments and Service Interfaces.</li>
+                                                                                                                                                                                                <li>TIER1_SERVICE_INTERFACE - Redistribute Tier1 service interface subnets.</li>
+                                                                                                                                                                                                <li>TIER1_SEGMENT - Redistribute subnets configured on Segments connected to Tier1.</li>
+                                                                                                                                                                                                <li>TIER1_IPSEC_LOCAL_ENDPOINT - Redistribute IPSec VPN local-endpoint subnets advertised by TIER1.</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Enable redistribution of different types of routes on Tier-0.</div>
+                                            <div>This property is only valid for locale-service under Tier-0.</div>
+                                            <div>This property is deprecated, please use &quot;route_redistribution_config&quot; property to configure redistribution rules.</div>
+                                                        </td>
+            </tr>
+                                <tr>
                                                     <td class="elbow-placeholder"></td>
                                                 <td colspan="3">
                     <div class="ansibleOptionAnchor" id="parameter-locale_services/state"></div>

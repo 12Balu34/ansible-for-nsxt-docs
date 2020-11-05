@@ -1,12 +1,12 @@
-:source: nsxt/nsxt_compute_collection_transport_templates_facts.py
+:source: nsxt/nsxt_cluster_profiles_facts.py
 
 :orphan:
 
-.. _nsxt_compute_collection_transport_templates_facts_module:
+.. _nsxt_cluster_profiles_facts_module:
 
 
-nsxt_compute_collection_transport_templates_facts -- List compute collection transportnode templates
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+nsxt_cluster_profiles_facts -- List Cluster Profiles
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.7
 
@@ -17,7 +17,7 @@ nsxt_compute_collection_transport_templates_facts -- List compute collection tra
 
 Synopsis
 --------
-- Returns all eligible compute collection transportnode templates.
+- Returns paginated list of cluster profiles Cluster profiles define policies for edge cluster and bridge cluster.
 
 
 
@@ -90,12 +90,12 @@ Examples
 .. code-block:: yaml+jinja
 
     
-        - name: List compute collection transport template
-          nsxt_fabric_compute_collection_transport_node_templates_facts:
-            hostname: "10.192.167.137"
-            username: "admin"
-            password: "Admin!23Admin"
-            validate_certs: False
+    - name: List Cluster Profiles
+      nsxt_cluster_profiles_facts:
+        hostname: "10.192.167.137"
+        username: "admin"
+        password: "Admin!23Admin"
+        validate_certs: False
 
 
 
@@ -119,6 +119,6 @@ Status
 Authors
 ~~~~~~~
 
-- Rahul Raghuvanshi
+- Kommireddy Akhilesh
 
 

@@ -17,7 +17,7 @@ nsxt_upgrade_upload_mub -- Uploads upgrade mub
 
 Synopsis
 --------
-- Uploads upgrade mub.
+- Uploads upgrade mub
 
 
 

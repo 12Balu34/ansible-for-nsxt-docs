@@ -5,8 +5,8 @@
 .. _nsxt_logical_router_ports_module:
 
 
-nsxt_logical_router_ports -- Create a Logical Router Port
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+nsxt_logical_router_ports -- Create a Logical Router Port description: Creates a logical router port. The required parameters include resource_type (LogicalRouterUpLinkPort, LogicalRouterDownLinkPort, LogicalRouterLinkPort, LogicalRouterLoopbackPort, LogicalRouterCentralizedServicePort); and logical_router_id (the router to which each logical router port is assigned). The service_bindings parameter is optional
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.7
 
@@ -17,11 +17,6 @@ nsxt_logical_router_ports -- Create a Logical Router Port
 
 Synopsis
 --------
-- Creates a logical router port.
-- The required parameters include resource_type (LogicalRouterUpLinkPort, LogicalRouterDownLinkPort, LogicalRouterLinkPort, LogicalRouterLoopbackPort, LogicalRouterCentralizedServicePort);
-- and logical_router_id (the router to which each logical router port is assigned).
-- The service_bindings parameter is optional.
-
 
 
 

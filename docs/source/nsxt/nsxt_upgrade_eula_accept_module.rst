@@ -17,7 +17,7 @@ nsxt_upgrade_eula_accept -- Accept end user license agreement
 
 Synopsis
 --------
-- Accept end user license agreement.
+- Accept end user license agreement 
 
 
 

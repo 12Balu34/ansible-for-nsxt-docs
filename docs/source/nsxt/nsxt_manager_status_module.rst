@@ -17,7 +17,7 @@ nsxt_manager_status -- Shows status of nsxt manager
 
 Synopsis
 --------
-- Shows status of nsxt manager.
+- Shows status of nsxt manager
 
 
 

@@ -17,13 +17,7 @@ nsxt_logical_ports -- Create a Logical Port
 
 Synopsis
 --------
-- Creates a new logical switch port.
-- The required parameters are the associated logical_switch_id and admin_state (UP or DOWN).
-- Optional parameters are the attachment and switching_profile_ids.
-- If you don't specify switching_profile_ids, default switching profiles are assigned to the port.
-- If you don't specify an attachment, the switch port remains empty.
-- To configure an attachment, you must specify an id, and optionally you can specify an attachment_type (VIF or LOGICALROUTER).
-- The attachment_type is VIF by default.
+- Creates a new logical switch port. The required parameters are the associated logical_switch_id and admin_state (UP or DOWN). Optional parameters are the attachment and switching_profile_ids. If you don't specify switching_profile_ids, default switching profiles are assigned to the port. If you don't specify an attachment, the switch port remains empty. To configure an attachment, you must specify an id, and optionally you can specify an attachment_type (VIF or LOGICALROUTER). The attachment_type is VIF by default.
 
 
 

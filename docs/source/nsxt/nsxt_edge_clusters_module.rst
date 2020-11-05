@@ -17,11 +17,7 @@ nsxt_edge_clusters -- Create Edge Cluster
 
 Synopsis
 --------
-- Creates a new edge cluster.
-- It only supports homogeneous members.
-- The TransportNodes backed by EdgeNode are only allowed in cluster members.
-- DeploymentType (VIRTUAL_MACHINE|PHYSICAL_MACHINE) of these EdgeNodes is recommended to be the same.
-- EdgeCluster supports members of different deployment types.
+- Creates a new edge cluster. It only supports homogeneous members. The TransportNodes backed by EdgeNode are only allowed in cluster members. DeploymentType (VIRTUAL_MACHINE|PHYSICAL_MACHINE) of these EdgeNodes is recommended to be the same. EdgeCluster supports members of different deployment types.
 
 
 

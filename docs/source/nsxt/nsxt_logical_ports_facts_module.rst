@@ -17,9 +17,7 @@ nsxt_logical_ports_facts -- List All Logical Ports
 
 Synopsis
 --------
-- Returns information about all configured logical switch ports.
-- Logical switch ports connect to VM virtual network interface cards (NICs).
-- Each logical port is associated with one logical switch.
+- Returns information about all configured logical switch ports. Logical switch ports connect to VM virtual network interface cards (NICs). Each logical port is associated with one logical switch.
 
 
 

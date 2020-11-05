@@ -17,8 +17,7 @@ nsxt_logical_routers_facts -- List Logical Routers
 
 Synopsis
 --------
-- Returns information about all logical routers, including the UUID, internal and external transit network addresses, and the router type (TIER0 or TIER1).
-- You can get information for only TIER0 routers or only the TIER1 routers by including the router_type query parameter.
+- Returns information about all logical routers, including the UUID, internal and external transit network addresses, and the router type (TIER0 or TIER1). You can get information for only TIER0 routers or only the TIER1 routers by including the router_type query parameter.
 
 
 

@@ -17,8 +17,7 @@ nsxt_policy_ip_pool -- Create or Delete a Policy IP Pool
 
 Synopsis
 --------
-- Creates or deletes a Policy IP Pool.
-- Required attributes include id and display_name.
+- Creates or deletes a Policy IP Pool. Required attributes include id and display_name.
 
 
 

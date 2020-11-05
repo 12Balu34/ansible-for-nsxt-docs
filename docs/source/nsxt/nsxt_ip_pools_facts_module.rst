@@ -17,8 +17,7 @@ nsxt_ip_pools_facts -- List IP Pools
 
 Synopsis
 --------
-- Returns information about the configured IP address pools.
-- Information includes the display name and description of the pool and the details of each of the subnets in the pool, including the DNS servers, allocation ranges, gateway, and CIDR subnet address.
+- Returns information about the configured IP address pools. Information includes the display name and description of the pool and the details of each of the subnets in the pool, including the DNS servers, allocation ranges, gateway, and CIDR subnet address.
 
 
 

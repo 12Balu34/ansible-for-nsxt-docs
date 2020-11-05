@@ -17,7 +17,7 @@ nsxt_upgrade_pre_post_checks_facts -- Get the pre and post upgrade checks
 
 Synopsis
 --------
-- Get the pre and post upgrade checks.
+- Get the pre and post upgrade checks
 
 
 

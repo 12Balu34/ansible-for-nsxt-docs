@@ -17,7 +17,7 @@ nsxt_upgrade_history -- Get upgrade history
 
 Synopsis
 --------
-- Get upgrade history.
+- Get upgrade history
 
 
 

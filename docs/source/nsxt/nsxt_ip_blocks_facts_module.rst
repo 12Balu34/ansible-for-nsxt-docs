@@ -17,8 +17,7 @@ nsxt_ip_blocks_facts -- Returns list of configured IP address blocks
 
 Synopsis
 --------
-- Returns information about configured IP address blocks.
-- Information includes the id, display name, description & CIDR of IP address blocks.
+- Returns information about configured IP address blocks. Information includes the id, display name, description & CIDR of IP address blocks
 
 
 

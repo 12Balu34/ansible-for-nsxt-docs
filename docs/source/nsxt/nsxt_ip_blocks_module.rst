@@ -17,9 +17,7 @@ nsxt_ip_blocks -- Create a new IP address block
 
 Synopsis
 --------
-- Creates a new IPv4 address block using the specified cidr.
-- cidr is a required parameter.
-- display_name & description are optional parameters.
+- Creates a new IPv4 address block using the specified cidr. cidr is a required parameter. display_name & description are optional parameters
 
 
 

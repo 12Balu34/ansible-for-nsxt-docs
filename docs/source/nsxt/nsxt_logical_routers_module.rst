@@ -17,8 +17,7 @@ nsxt_logical_routers -- Create a Logical Router
 
 Synopsis
 --------
-- Creates a logical router. The required parameters are router_type (TIER0 or TIER1) and edge_cluster_id (TIER0 only).
-- Optional parameters include internal and external transit network addresses.
+- Creates a logical router. The required parameters are router_type (TIER0 or TIER1) and edge_cluster_id (TIER0 only). Optional parameters include internal and external transit network addresses.
 
 
 

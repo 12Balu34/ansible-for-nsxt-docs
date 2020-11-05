@@ -17,7 +17,7 @@ nsxt_upgrade_plan -- Upgrade plan settings for the component
 
 Synopsis
 --------
-- Upgrade plan settings for the component.
+- Upgrade plan settings for the component
 
 
 

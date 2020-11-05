@@ -1,14 +1,14 @@
-:source: nsxt/nsxt_policy_bfd_config.py
+:source: nsxt/nsxt_policy_l2_bridge_ep_profile.py
 
 :orphan:
 
-.. _nsxt_policy_bfd_config_module:
+.. _nsxt_policy_l2_bridge_ep_profile_module:
 
 
-nsxt_policy_bfd_config -- Create or Delete a Policy BFD Config
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+nsxt_policy_l2_bridge_ep_profile -- Create or Delete a Policy L2 Bridge Endpoint Profile
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. versionadded:: 2.8
+.. versionadded:: 2.9
 
 .. contents::
    :local:
@@ -17,8 +17,7 @@ nsxt_policy_bfd_config -- Create or Delete a Policy BFD Config
 
 Synopsis
 --------
-- Creates or deletes a Policy BFD Config.
-- Required attributes include id and display_name.
+- Creates or deletes a Policy L2 Bridge Endpoint Profile Required attributes include id and display_name.
 
 
 
@@ -61,7 +60,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>BFD Config description.</div>
+                                            <div>Resource description.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -102,6 +101,160 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-edge_nodes_info"></div>
+                    <b>edge_nodes_info</b>
+                    <a class="ansibleOptionLink" href="#parameter-edge_nodes_info" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">list</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>List of dicts that comprise of information to form policy paths to edge nodes. Edge allocation for L2 bridging</div>
+                                            <div>Minimim 1 and Maximum 2 list elements</div>
+                                                        </td>
+            </tr>
+                                                            <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-edge_nodes_info/edge_cluster_display_name"></div>
+                    <b>edge_cluster_display_name</b>
+                    <a class="ansibleOptionLink" href="#parameter-edge_nodes_info/edge_cluster_display_name" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>display name of the edge cluster</div>
+                                            <div>either this or edge_cluster_id must be specified. If both are specified, edge_cluster_id takes precedence</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-edge_nodes_info/edge_cluster_id"></div>
+                    <b>edge_cluster_id</b>
+                    <a class="ansibleOptionLink" href="#parameter-edge_nodes_info/edge_cluster_id" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>edge_cluster_id where edge node is located</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-edge_nodes_info/edge_node_display_name"></div>
+                    <b>edge_node_display_name</b>
+                    <a class="ansibleOptionLink" href="#parameter-edge_nodes_info/edge_node_display_name" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Display name of the edge node.</div>
+                                            <div>either this or edge_node_id must be specified. If both are specified, edge_node_id takes precedence</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-edge_nodes_info/edge_node_id"></div>
+                    <b>edge_node_id</b>
+                    <a class="ansibleOptionLink" href="#parameter-edge_nodes_info/edge_node_id" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>ID of the edge node</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-edge_nodes_info/enforcementpoint_id"></div>
+                    <b>enforcementpoint_id</b>
+                    <a class="ansibleOptionLink" href="#parameter-edge_nodes_info/enforcementpoint_id" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"default"</div>
+                                    </td>
+                                                                <td>
+                                            <div>enforcementpoint_id where edge node is located</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-edge_nodes_info/site_id"></div>
+                    <b>site_id</b>
+                    <a class="ansibleOptionLink" href="#parameter-edge_nodes_info/site_id" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"default"</div>
+                                    </td>
+                                                                <td>
+                                            <div>site_id where edge node is located</div>
+                                                        </td>
+            </tr>
+                    
+                                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-failover_mode"></div>
+                    <b>failover_mode</b>
+                    <a class="ansibleOptionLink" href="#parameter-failover_mode" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li><div style="color: blue"><b>PREEMPTIVE</b>&nbsp;&larr;</div></li>
+                                                                                                                                                                                                <li>NON_PREEMPTIVE</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Failover mode for the edge bridge cluster</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ha_mode"></div>
+                    <b>ha_mode</b>
+                    <a class="ansibleOptionLink" href="#parameter-ha_mode" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li><div style="color: blue"><b>ACTIVE_STANDBY</b>&nbsp;&larr;</div></li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>High avaialability mode can be active-active or active-standby. High availability mode cannot be modified after realization</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-hostname"></div>
                     <b>hostname</b>
                     <a class="ansibleOptionLink" href="#parameter-hostname" title="Permalink to this option"></a>
@@ -122,47 +275,12 @@ Parameters
                     <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">string</span>
-                                                 / <span style="color: red">required</span>                    </div>
+                                                                    </div>
                                     </td>
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>The id of the BFD Config.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-interval"></div>
-                    <b>interval</b>
-                    <a class="ansibleOptionLink" href="#parameter-interval" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">integer</span>
-                                                                    </div>
-                                    </td>
-                                <td>
-                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">500</div>
-                                    </td>
-                                                                <td>
-                                            <div>Time interval between heartbeat packets in milliseconds</div>
-                                            <div>Should be in the range [50-60000]</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-multiple"></div>
-                    <b>multiple</b>
-                    <a class="ansibleOptionLink" href="#parameter-multiple" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">integer</span>
-                                                                    </div>
-                                    </td>
-                                <td>
-                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">3</div>
-                                    </td>
-                                                                <td>
-                                            <div>Declare dead multiple.</div>
-                                            <div>Number of times heartbeat packet is missed before BFD declares the neighbor is down.</div>
-                                            <div>Should be in the range [2-16]</div>
+                                            <div>The id of the Policy L2 Bridge Endpoint Profile</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -340,16 +458,23 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Update BFD Config
-      nsxt_policy_bfd_config:
+    - name: create L2 Bridge Endpoint Profile
+      nsxt_policy_l2_bridge_ep_profile:
         hostname: "10.10.10.10"
         nsx_cert_path: /root/com.vmware.nsx.ncp/nsx.crt
         nsx_key_path: /root/com.vmware.nsx.ncp/nsx.key
         validate_certs: False
-        display_name: test-bfd-config
+        id: test-ep-profile
+        display_name: test-ep-profile
         state: present
-        interval: 200
-        multiple: 10
+        edge_nodes_info:
+            - edge_cluster_display_name: edge-cluster-1
+              edge_node_id: 123471da-3823-11ea-9170-000c291a8262
+        failover_mode: PREEMPTIVE
+        ha_mode: ACTIVE_STANDBY
+        tags:
+        - tag: "my-tag"
+          scope: "my-scope"
 
 
 

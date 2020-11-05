@@ -17,8 +17,7 @@ nsxt_policy_group -- Create or Delete a Policy Policy Group
 
 Synopsis
 --------
-- Creates or deletes a Policy Policy Group.
-- Required attributes include id and display_name.
+- Creates or deletes a Policy Policy Group. Required attributes include id and display_name.
 
 
 

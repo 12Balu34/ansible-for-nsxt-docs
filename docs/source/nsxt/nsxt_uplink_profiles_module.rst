@@ -17,10 +17,7 @@ nsxt_uplink_profiles -- Create a Hostswitch Profile
 
 Synopsis
 --------
-- Creates a hostswitch profile. The resource_type is required.
-- For uplink profiles, the teaming and policy parameters are required.
-- By default, the mtu is 1600 and the transport_vlan is 0.
-- The supported MTU range is 1280 through 9000.
+- Creates a hostswitch profile. The resource_type is required. For uplink profiles, the teaming and policy parameters are required. By default, the mtu is 1600 and the transport_vlan is 0. The supported MTU range is 1280 through 9000.
 
 
 
@@ -266,6 +263,21 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>State can be either &#x27;present&#x27; or &#x27;absent&#x27;. &#x27;present&#x27; is used to create or update resource. &#x27;absent&#x27; is used to delete resource.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-tags"></div>
+                    <b>tags</b>
+                    <a class="ansibleOptionLink" href="#parameter-tags" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">Array of Tag</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Opaque identifier meaninful to API user</div>
                                                         </td>
             </tr>
                                 <tr>

@@ -1,12 +1,12 @@
-:source: nsxt/nsxt_policy_ip_block.py
+:source: nsxt/nsxt_policy_bfd_profile.py
 
 :orphan:
 
-.. _nsxt_policy_ip_block_module:
+.. _nsxt_policy_bfd_profile_module:
 
 
-nsxt_policy_ip_block -- Create or Delete a Policy IP Block
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+nsxt_policy_bfd_profile -- Create or Delete a Policy BFD Profile
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.8
 
@@ -17,7 +17,7 @@ nsxt_policy_ip_block -- Create or Delete a Policy IP Block
 
 Synopsis
 --------
-- Creates or deletes a Policy IP Block. Required attributes include id and display_name.
+- Creates or deletes a Policy BFD Profile. Required attributes include id and display_name.
 
 
 
@@ -50,22 +50,6 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-cidr"></div>
-                    <b>cidr</b>
-                    <a class="ansibleOptionLink" href="#parameter-cidr" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                 / <span style="color: red">required</span>                    </div>
-                                    </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>A contiguous IP address space represented by network address and prefix length</div>
-                                            <div>Represents a network address and the prefix length which will be associated with a layer-2 broadcast domain. Support only IPv4 CIDR.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-description"></div>
                     <b>description</b>
                     <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
@@ -76,7 +60,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>IP Block description.</div>
+                                            <div>BFD Profile description.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -137,12 +121,47 @@ Parameters
                     <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">string</span>
-                                                                    </div>
+                                                 / <span style="color: red">required</span>                    </div>
                                     </td>
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>The id of the Policy IP Block.</div>
+                                            <div>The id of the BFD Profile.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-interval"></div>
+                    <b>interval</b>
+                    <a class="ansibleOptionLink" href="#parameter-interval" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">500</div>
+                                    </td>
+                                                                <td>
+                                            <div>Time interval between heartbeat packets in milliseconds</div>
+                                            <div>Should be in the range [50-60000]</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-multiple"></div>
+                    <b>multiple</b>
+                    <a class="ansibleOptionLink" href="#parameter-multiple" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                    </td>
+                                <td>
+                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">3</div>
+                                    </td>
+                                                                <td>
+                                            <div>Declare dead multiple.</div>
+                                            <div>Number of times heartbeat packet is missed before BFD declares the neighbor is down.</div>
+                                            <div>Should be in the range [2-16]</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -320,16 +339,16 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: create IP Block
-      nsxt_policy_ip_block:
+    - name: Update BFD Profile
+      nsxt_policy_bfd_profile:
         hostname: "10.10.10.10"
         nsx_cert_path: /root/com.vmware.nsx.ncp/nsx.crt
         nsx_key_path: /root/com.vmware.nsx.ncp/nsx.key
         validate_certs: False
-        id: test-ip-blk
-        display_name: test-ip-blk
-        state: "present"
-        cidr: "192.168.0.0/16"
+        display_name: test-bfd-profile
+        state: present
+        interval: 200
+        multiple: 10
 
 
 

@@ -17,8 +17,7 @@ nsxt_manager_auto_deployment -- Deploy and register a cluster node VM
 
 Synopsis
 --------
-- Deploys a cluster node VM as specified by the deployment config.
-- Once the VM is deployed and powered on, it will automatically join the existing cluster.
+- Deploys a cluster node VM as specified by the deployment config. Once the VM is deployed and powered on, it will automatically join the existing cluster.
 
 
 

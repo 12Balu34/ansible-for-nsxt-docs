@@ -17,9 +17,7 @@ nsxt_licenses -- Add a new license key
 
 Synopsis
 --------
-- This will add a license key to the system.
-- The API supports adding only one license key for each license edition type - Standard, Advanced or Enterprise.
-- If a new license key is tried to add for an edition for which the license key already exists, then this API will return an error.
+- This will add a license key to the system. The API supports adding only one license key for each license edition type - Standard, Advanced or Enterprise. If a new license key is tried to add for an edition for which the license key already exists, then this API will return an error.
 
 
 

@@ -17,7 +17,7 @@ nsxt_upgrade_uc_facts -- Get upgrade-coordinator upgrade status
 
 Synopsis
 --------
-- Get upgrade-coordinator upgrade status.
+- Get upgrade-coordinator upgrade status
 
 
 

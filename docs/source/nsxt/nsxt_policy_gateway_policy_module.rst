@@ -1,12 +1,12 @@
-:source: nsxt/nsxt_policy_security_policy.py
+:source: nsxt/nsxt_policy_gateway_policy.py
 
 :orphan:
 
-.. _nsxt_policy_security_policy_module:
+.. _nsxt_policy_gateway_policy_module:
 
 
-nsxt_policy_security_policy -- Create or Delete a Policy Security Policy
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+nsxt_policy_gateway_policy -- Update a Gateway Policy
++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.8
 
@@ -17,7 +17,7 @@ nsxt_policy_security_policy -- Create or Delete a Policy Security Policy
 
 Synopsis
 --------
-- Creates or deletes a Policy Security Policy. Required attributes include id and display_name.
+- Updates a Gateway Policy Required attributes include id or display_name
 
 
 
@@ -58,11 +58,17 @@ Parameters
                                                                     </div>
                                     </td>
                                 <td>
-                                                                                                                                                            </td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>Emergency</li>
+                                                                                                                                                                                                <li>SystemRules</li>
+                                                                                                                                                                                                <li>SharedPreRules</li>
+                                                                                                                                                                                                <li>LocalGatewayRules</li>
+                                                                                                                                                                                                <li>AutoServiceRules</li>
+                                                                                                                                                                                                <li><div style="color: blue"><b>Default</b>&nbsp;&larr;</div></li>
+                                                                                    </ul>
+                                                                            </td>
                                                                 <td>
-                                            <div>A way to classify a security policy, if needed.</div>
-                                            <div>Distributed Firewall - Policy framework provides five pre-defined categories for classifying a security policy. They are &quot;Ethernet&quot;,Emergency&quot;, &quot;Infrastructure&quot;, &quot;Environment&quot; and &quot;Application&quot;. There is a pre-determined order in which the policy framework manages the priority of these security policies. Ethernet category is for supporting layer 2 firewall rules. The other four categories are applicable for layer 3 rules. Amongst them, the Emergency category has the highest priority followed by Infrastructure, Environment and then Application rules. Administrator can choose to categorize a security policy into the above categories or can choose to leave it empty. If empty it will have the least precedence w.r.t the above four categories.</div>
-                                            <div>Edge Firewall - Policy Framework for Edge Firewall provides six pre-defined categories &quot;Emergency&quot;, &quot;SystemRules&quot;, &quot;SharedPreRules&quot;, &quot;LocalGatewayRules&quot;, &quot;AutoServiceRules&quot; and &quot;Default&quot;, in order of priority of rules. All categories are allowed for Gatetway Policies that belong to &#x27;default&#x27; Domain. However, for user created domains, category is restricted to &quot;SharedPreRules&quot; or &quot;LocalGatewayRules&quot; only. Also, the users can add/modify/delete rules from only the &quot;SharedPreRules&quot; and &quot;LocalGatewayRules&quot; categories. If user doesn&#x27;t specify the category then defaulted to &quot;Rules&quot;. System generated category is used by NSX created rules, for example BFD rules. Autoplumbed category used by NSX verticals to autoplumb data path rules. Finally, &quot;Default&quot; category is the placeholder default rules with lowest in the order of priority.</div>
+                                            <div>Policy Framework for Edge Firewall provides six pre-defined categories - &quot;Emergency&quot;, &quot;SystemRules&quot;, &quot;SharedPreRules&quot;, &quot;LocalGatewayRules&quot;, &quot;AutoServiceRules&quot; and &quot;Default&quot;, in order of priority of rules. All categories are allowed for Gatetway Policies that belong to &#x27;default&#x27; Domain. However, for user created domains, category is restricted to &quot;SharedPreRules&quot; or &quot;LocalGatewayRules&quot; only. Also, the users can add/modify/delete rules from only the &quot;SharedPreRules&quot; and &quot;LocalGatewayRules&quot; categories. If user doesn&#x27;t specify the category then defaulted to &quot;Rules&quot;. System generated category is used by NSX created rules, for example BFD rules. Autoplumbed category used by NSX verticals to autoplumb data path rules. Finally, &quot;Default&quot; category is the placeholder default rules with lowest in the order of priority</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -77,28 +83,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>SecurityPolicy lock/unlock comments</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-connectivity_strategy"></div>
-                    <b>connectivity_strategy</b>
-                    <a class="ansibleOptionLink" href="#parameter-connectivity_strategy" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                    </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Connectivity strategy applicable for this SecurityPolicy</div>
-                                            <div>This field indicates the default connectivity policy for the security policy. Based on the connectivitiy strategy, a default rule for this security policy will be created. An appropriate action will be set on the rule based on the value of the connectivity strategy. If NONE is selected or no connectivity strategy is specified, then no default rule for the security policy gets created. The default rule that gets created will be a any-any rule and applied to entities specified in the scope of the security policy. Specifying the connectivity_strategy without specifying the scope is not allowed. The scope has to be a Group and one cannot specify IPAddress directly in the group that is used as scope. This default rule is only applicable for the Layer3 security policies</div>
-                                            <div>WHITELIST - Adds a default drop rule. Administrator can then use &quot;allow&quot; rules (aka whitelist) to allow traffic between groups</div>
-                                            <div>BLACKLIST - Adds a default allow rule. Admin can then use &quot;drop&quot; rules (aka blacklist) to block traffic between groups</div>
-                                            <div>WHITELIST_ENABLE_LOGGING - Whitelising with logging enabled</div>
-                                            <div>BLACKLIST_ENABLE_LOGGING - Blacklisting with logging enabled</div>
-                                            <div>NONE - No default rule is created</div>
+                                            <div>Comments for security policy lock/unlock</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -113,7 +98,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Security Policy description.</div>
+                                            <div>Gateway Policy description.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -129,42 +114,7 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Display name.</div>
-                                            <div>If resource ID is not specified, display_name will be used as ID.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-do_wait_till_create"></div>
-                    <b>do_wait_till_create</b>
-                    <a class="ansibleOptionLink" href="#parameter-do_wait_till_create" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                    </td>
-                                <td>
-                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li><div style="color: blue"><b>no</b>&nbsp;&larr;</div></li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Can be used to wait for the realization of subresource before the request to create the next resource is sent to the Manager.</div>
-                                            <div>Can be specified for each subresource.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-domain_id"></div>
-                    <b>domain_id</b>
-                    <a class="ansibleOptionLink" href="#parameter-domain_id" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                 / <span style="color: red">required</span>                    </div>
-                                    </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>The domain id where the Security Policy is realized.</div>
+                                            <div>If resource ID is not specified, display_name will be used as ID</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -194,7 +144,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>The id of the Policy Security Policy.</div>
+                                            <div>The id of the Gateway Policy</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -207,14 +157,13 @@ Parameters
                                                                     </div>
                                     </td>
                                 <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li><div style="color: blue"><b>no</b>&nbsp;&larr;</div></li>
                                                                                                                                                                                                 <li>yes</li>
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>Lock a security policy</div>
-                                            <div>Indicates whether a security policy should be locked. If the security policy is locked by a user, then no other user would be able to modify this security policy. Once the user releases the lock, other users can update this security policy.</div>
+                                            <div>Indicates whether a security policy should be locked. If the security policy is locked by a user, then no other user would be able to modify this security policy. Once the user releases the lock, other users can update this security policy</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -291,7 +240,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Rules that are a part of this SecurityPolicy</div>
+                                            <div>Rules that are a part of this GatewayPolicy</div>
                                                         </td>
             </tr>
                                                             <tr>
@@ -701,7 +650,7 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Path to the scheduler for time based scheduling</div>
-                                            <div>Provides a mechanism to apply the rules in this policy for a specified time duration.</div>
+                                            <div>Provides a mechanism to apply the rules in this policy for a specified time duration</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -716,7 +665,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>The list of group paths where the rules in this policy will get applied. This scope will take precedence over rule level scope. Supported only for security policies.</div>
+                                            <div>The list of group paths where the rules in this policy will get applied. This scope will take precedence over rule level scope. Supported only for security and redirection policies. In case of RedirectionPolicy, it is expected only when the policy is NS and redirecting to service chain.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -732,6 +681,7 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Sequence number to resolve conflicts across Domains</div>
+                                            <div>This field is used to resolve conflicts between security policies across domains. In order to change the sequence number of a policy one can fire a POST request on the policy entity with a query parameter action=revise The sequence number field will reflect the value of the computed sequence number upon execution of the above mentioned POST request. For scenarios where the administrator is using a template to update several security policies, the only way to set the sequence number is to explicitly specify the sequence number for each security policy. If no sequence number is specified in the payload, a value of 0 is assigned by default. If there are multiple policies with the same sequence number then their order is not deterministic. If a specific order of policies is desired, then one has to specify unique sequence numbers or use the POST request on the policy entity with a query parameter action=revise to let the framework assign a sequence number</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -770,9 +720,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>Stateful nature of the entries within this security policy.</div>
-                                            <div>Stateful or Stateless nature of security policy is enforced on all rules in this security policy. When it is stateful, the state of the network connects are tracked and a stateful packet inspection is performed.</div>
-                                            <div>Layer3 security policies can be stateful or stateless. By default, they are stateful.</div>
-                                            <div>Layer2 security policies can only be stateless.</div>
+                                            <div>Stateful or Stateless nature of security policy is enforced on all rules in this security policy. When it is stateful, the state of the network connects are tracked and a stateful packet inspection is performed. Layer3 security policies can be stateful or stateless. By default, they are stateful. Layer2 security policies can only be stateless.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -840,8 +788,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>Enforce strict tcp handshake before allowing data packets</div>
-                                            <div>Ensures that a 3 way TCP handshake is done before the data packets are sent.</div>
-                                            <div>tcp_strict=true is supported only for stateful security policies</div>
+                                            <div>Ensures that a 3 way TCP handshake is done before the data packets are sent. tcp_strict=true is supported only for stateful security policies.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -890,35 +837,14 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: create Security Policy
-      nsxt_policy_security_policy:
+    - name: Update Gateway Policy
+      nsxt_policy_gateway_policy:
         hostname: "10.10.10.10"
         nsx_cert_path: /root/com.vmware.nsx.ncp/nsx.crt
         nsx_key_path: /root/com.vmware.nsx.ncp/nsx.key
         validate_certs: False
-        id: test-sec-pol
-        display_name: test-sec-pol
-        state: "present"
-        domain_id: "default"
-        locked: True
-        rules:
-          - action: "ALLOW"
-            description: "example-rule"
-            sequence_number: 1
-            display_name: "test-example-rule"
-            id: "test-example-rule"
-            source_groups: ["/infra/domains/vmc/groups/dbgroup"]
-            destination_groups: ["/infra/domains/vmc/groups/appgroup"]
-            services: ["/infra/services/HTTP", "/infra/services/CIM-HTTP"]
-            tag: my-tag
-            tags:
-              - scope: scope-1
-                tag: tag-1
-            logged: True
-            notes: dummy-notes
-            ip_protocol: IPV4_IPV6
-            scope: my-scope
-            profiles: "encryption algorithm"
+        display_name: test-gateway-policy
+        state: present
 
 
 

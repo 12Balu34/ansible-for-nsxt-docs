@@ -17,9 +17,7 @@ nsxt_certificates -- Add a New Certificate
 
 Synopsis
 --------
-- Adds a new private-public certificate or a chain of certificates (CAs) and, optionally, a private key that can be applied to one of the user-facing components (appliance management or edge).
-- The certificate and the key should be stored in PEM format.
-- If no private key is provided, the certificate is used as a client certificate in the trust store.
+- Adds a new private-public certificate or a chain of certificates (CAs) and, optionally, a private key that can be applied to one of the user-facing components (appliance management or edge). The certificate and the key should be stored in PEM format. If no private key is provided, the certificate is used as a client certificate in the trust store.
 
 
 

@@ -17,7 +17,7 @@ nsxt_vm_tags -- Update tags on NSXT VM
 
 Synopsis
 --------
-- Update tags on NSXT VM.
+- Update tags on NSXT VM
 
 
 
